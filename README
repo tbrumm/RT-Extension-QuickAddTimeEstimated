@@ -1,0 +1,33 @@
+NAME
+    RT-Extension-QuickAddTimeEstimated - Quick "add to time worked" entry on
+    the ticket display page
+
+INSTALLATION
+    "perl Makefile.PL"
+    "make"
+    "make install"
+        May need root permissions
+
+    Edit your /opt/rt4/etc/RT_SiteConfig.pm
+        Add this line:
+
+            Set(@Plugins, qw(RT::Extension::QuickAddTimeEstimated));
+
+        or add "RT::Extension::QuickAddTimeEstimated" to your existing @Plugins
+        line.
+
+    Clear your mason cache
+            rm -rf /opt/rt4/var/mason_data/obj
+
+    Restart your webserver
+
+AUTHOR
+    Torsten Brumm <tbrumm@mac.com>
+
+THANKS
+    Based on original Plugin RT-Extension-QuickAddTimeWorked from Thomas Sibley
+
+LICENSE AND COPYRIGHT
+    This is free software, licensed under:
+
+      The GNU General Public License, Version 2, June 1991
