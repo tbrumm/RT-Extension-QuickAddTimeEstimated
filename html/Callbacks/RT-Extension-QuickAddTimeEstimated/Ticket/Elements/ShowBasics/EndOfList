@@ -1,0 +1,22 @@
+<%args>
+$TicketObj
+</%args>
+<%init>
+# The self service interface doesn't support updating time fields.
+return unless $session{CurrentUser}->Privileged
+          and $session{CurrentUser}->HasRight( Object => $TicketObj, Right => "ModifyTicket" );
+</%init>
+<tr>
+  <td class="label"><&|/l&>Add time estimated:</&></td>
+  <td class="value">
+    <form action="<% RT->Config->Get("WebPath") %>/Ticket/Display.html" method="POST">
+      <input type="hidden" name="id" value="<% $TicketObj->id %>">
+      <& /Elements/EditTimeValue,
+            Name    => "TimeEstimated",
+            Default => $ARGS{TimeEstimated} || '',
+            InUnits => $ARGS{'TimeEstimated-TimeUnits'} || 'minutes',
+            &>
+      <input type="submit" value="Add time">
+    </form>
+  </td>
+</tr>
