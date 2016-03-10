@@ -1,4 +1,4 @@
-html/Callbacks/RT-Extension-QuickAddTimeEstimated/Ticket/Elements/ShowBasics/EndOfList
+html/Callbacks/RT-Extension-QuickAddTimeEstimated/Ticket/Elements/ShowBasics/AfterTimeEstimated
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
