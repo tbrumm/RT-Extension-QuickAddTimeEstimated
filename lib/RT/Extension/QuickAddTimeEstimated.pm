@@ -2,7 +2,17 @@ use strict;
 use warnings;
 package RT::Extension::QuickAddTimeEstimated;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
+
+$RT::Config::META{'QuickAddTimeEstimated'} = {
+    Section         => 'Ticket display',
+    Overridable     => 1,
+    Widget          => '/Widgets/Form/Boolean',
+    WidgetArguments => {
+        Description => 'Display Add time estimated entry at Dates Widget', # loc
+        Hints       => '(' . __PACKAGE__ . ')',
+    },
+};
 
 =head1 NAME
 
